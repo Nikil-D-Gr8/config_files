@@ -1,1 +1,2 @@
 https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme.git
+https://github.com/Serge2702/KDE-Everforest.git
