@@ -1,0 +1,8 @@
+[Unit]
+Description=Rclone Obsidian Sync
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/rclone sync /home/nikil/Documents/ObsidianVault Obsidian:obsidian/ObsidianVault --exclude ".obsidian/**"
