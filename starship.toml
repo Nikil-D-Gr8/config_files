@@ -1,5 +1,5 @@
 [directory]
 truncation_length = 0
 truncate_to_repo = false
-format = "[$path](blue bold)"
+format = "[$path](blue bold) "
 home_symbol = "~"
