@@ -20,5 +20,5 @@ alias vim='nvim'
 fastfetch
 
 cdls() {
-  cd "$@" && ls -F
+  cd "$@" && la
 }

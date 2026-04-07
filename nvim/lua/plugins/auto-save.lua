@@ -5,7 +5,7 @@ return {
     require("auto-save").setup({
       enabled = true,
 
-      trigger_events = { "InsertLeave", "TextChanged" },
+      trigger_events = { "InsertLeave" },
 
       debounce_delay = 800,
 
