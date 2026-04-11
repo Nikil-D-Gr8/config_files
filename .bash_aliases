@@ -22,3 +22,9 @@ fastfetch
 cdls() {
   cd "$@" && la
 }
+
+inc() {
+  incus list --format csv -c ns | grep -q "^$1,RUNNING$" &&
+    incus exec "$1" -- bash ||
+    (incus start "$1" && incus exec "$1" -- bash)
+}
