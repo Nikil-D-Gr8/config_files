@@ -24,7 +24,13 @@ cdls() {
 }
 
 inc() {
-  incus list --format csv -c ns | grep -q "^$1,RUNNING$" &&
-    incus exec "$1" -- bash ||
-    (incus start "$1" && incus exec "$1" -- bash)
+  local container=$1
+  local dir=${2:-/mnt/debusine}
+
+  if incus list --format csv -c ns | grep -q "^$container,RUNNING$"; then
+    incus exec -t "$container" -- sudo -iu debian bash -lc "cd $dir && exec bash"
+  else
+    incus start "$container"
+    incus exec -t "$container" -- sudo -iu debian bash -lc "cd $dir && exec bash"
+  fi
 }
